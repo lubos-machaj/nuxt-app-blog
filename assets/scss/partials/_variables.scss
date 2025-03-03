@@ -1,0 +1,47 @@
+@use 'functions';
+
+/**
+* Colors
+*/
+$color-white: #ffffff;
+$color-black: #000000;
+$color-blue: #3A3B7B;
+$color-cyan: #64C2DB;
+$color-pruple: #7476ED;
+$color-pink: #E56F8C;
+
+$primary-color: $color-blue;
+$secondary-color: $color-cyan;
+$tertiary-color: $color-pruple;
+$accent-color: $color-pink;
+
+$background-color: $color-white;
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+/**
+* Typography
+*/
+$font-family: 'Poppins', sans-serif;
+$font-size: px-to-rem(16);
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$text-color: #2e2e2e;
+
+/**
+* Breakpoints
+*/
+$bp-xs: 320px;
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 992px;
+$bp-xl: 1200px;
+
+/**
+* Spacing
+*/
+
+
+
+$box-shadow: 0 1px 3px $shadow-color;
+

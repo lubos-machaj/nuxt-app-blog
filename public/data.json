@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "The Future of AI: How It’s Changing the Tech Industry",
+    "description": "Artificial Intelligence is transforming industries with automation, deep learning, and advanced analytics. Here’s what the future holds.",
+    "author": "John Doe",
+    "date": "2025-03-01",
+    "image": "https://emeritus.org/wp-content/uploads/2023/11/tech.png.webp",
+    "category": "AI & Machine Learning"
+  },
+  {
+    "id": 2,
+    "title": "Quantum Computing: The Next Big Revolution?",
+    "description": "Quantum computing promises to solve complex problems faster than traditional computers. But how far are we from real-world applications?",
+    "author": "Sarah Lee",
+    "date": "2025-02-25",
+    "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/What_is_the_Importance_of_Technology.jpg",
+    "category": "Computing"
+  },
+  {
+    "id": 3,
+    "title": "Top 5 Programming Languages to Learn in 2025",
+    "description": "From Python to Rust, discover which programming languages will dominate the tech industry in the coming years.",
+    "author": "Mark Johnson",
+    "date": "2025-02-20",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/008/680/961/small_2x/abstract-technology-background-free-vector.jpg",
+    "category": "Programming"
+  },
+  {
+    "id": 4,
+    "title": "Cybersecurity Trends: How to Stay Protected Online",
+    "description": "With cyber threats evolving, here are the latest trends and best practices to keep your data safe.",
+    "author": "Emily White",
+    "date": "2025-02-15",
+    "image": "https://images.all-free-download.com/images/thumbjpg/web_technology_conceptual_banner_template_modern_3d_dark_techno_elements_6939048.jpg",
+    "category": "Cybersecurity"
+  },
+  {
+    "id": 5,
+    "title": "The Rise of 5G: What It Means for Consumers and Businesses",
+    "description": "5G technology is revolutionizing mobile connectivity, but what impact will it have on daily life and industry?",
+    "author": "David Brown",
+    "date": "2025-02-10",
+    "image": "https://imageio.forbes.com/specials-images/imageserve/6200b0dddcf32d3be937fa84/The-5-Technologies-That-Will-Change-The-Future-Of-The-Human-Race/960x0.jpg?height=399&width=711&fit=bounds",
+    "category": "Telecommunications"
+  }
+]
