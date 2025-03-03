@@ -35,5 +35,5 @@ export default defineNuxtConfig({
     plugins: [svgLoader()],
   },
 
-  modules: ["@nuxt/image"],
+  modules: ["@nuxt/image", "@pinia/nuxt"],
 });

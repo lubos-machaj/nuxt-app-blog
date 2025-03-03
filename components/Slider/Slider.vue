@@ -8,7 +8,12 @@
 
 <script setup lang="ts">
 import type { Data } from "@/types/api";
-const { data } = await useFetch<Data[]>("/api/data");
+
+const data = ref<Data[]>([]);
+
+onBeforeMount(async () => {
+  data.value = await getData(0);
+});
 </script>
 
 <style scoped lang="scss">

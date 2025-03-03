@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Blog page {{ id }}</h2>
-    <p>{{ article?.title }}</p>
+    <p>{{ data }}</p>
   </div>
 </template>
 
@@ -9,11 +9,12 @@
 import type { Data } from "@/types/api";
 
 const { id } = useRoute().params;
-const { data } = await useFetch<Data[]>("/api/data");
+const data = ref<Data>();
 
-const article = computed(() =>
-  data.value?.find((item) => item.id === Number(id))
-);
+onBeforeMount(async () => {
+  const arrayData = await getData(0, Number(id));
+  data.value = arrayData[0];
+});
 </script>
 
 <style scoped></style>
