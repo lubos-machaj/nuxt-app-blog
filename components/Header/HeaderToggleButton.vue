@@ -21,15 +21,15 @@ const open = defineModel();
   z-index: 10;
 
   &__icon {
-    color: #424242;
+    color: $text-color;
     font-size: px-to-rem(30);
   }
 
   &__icon--open {
-    font-size: px-to-rem(25);
+    font-size: px-to-rem(20);
   }
 
-  @include media($bp-sm) {
+  @include media($bp-md) {
     display: none;
   }
 }

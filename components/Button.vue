@@ -35,7 +35,7 @@ const emit = defineEmits<{
 .btn {
   color: $text-color;
   border: 1px solid $text-color;
-  transition: background-color, color 0.3s;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn--primary {
@@ -61,6 +61,11 @@ const emit = defineEmits<{
 .btn--light {
   color: $color-white;
   border-color: $color-white;
+
+  &:hover {
+    color: $color-black;
+    background-color: $color-white;
+  }
 }
 
 .btn--sm {

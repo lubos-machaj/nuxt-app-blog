@@ -20,7 +20,7 @@ body {
   position: relative;
   overflow: hidden;
   
-  @include media($bp-sm) {
+  @include media($bp-md) {
     overflow: unset;
   }
 }
@@ -44,5 +44,11 @@ body {
 
   @include media($bp-xl) {
     max-width: 1140px;
+  }
+}
+
+.container--md {
+  @include max-media($bp-md) {
+    max-width: 100%;
   }
 }

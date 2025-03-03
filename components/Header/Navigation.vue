@@ -1,20 +1,25 @@
 <template>
   <nav class="nav" :class="{ 'nav--open': openNav }">
-    <nuxt-link class="nav__link" to="/home">Home</nuxt-link>
-    <nuxt-link class="nav__link" to="/about">About</nuxt-link>
-    <nuxt-link class="nav__link" to="/contact">Contact</nuxt-link>
-    <nuxt-link class="nav__link" to="/blog">Blog</nuxt-link>
+    <nuxt-link
+      v-for="route in routes"
+      :key="route"
+      :to="`/${route}`"
+      class="nav__link"
+      >{{ capitalize(route) }}
+    </nuxt-link>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { capitalize } from "@/utils/textFormat";
 defineProps({
+  routes: Array<string>,
   openNav: Boolean,
 });
 </script>
 
 <style scoped lang="scss">
-$mobile-nav-width: 70%;
+$mobile-nav-width: 75%;
 
 .nav {
   width: 50%;
@@ -25,9 +30,9 @@ $mobile-nav-width: 70%;
   right: -100%;
   transition: none;
   position: absolute;
-  z-index: 5;
+  z-index: 100;
 
-  @include media($bp-sm) {
+  @include media($bp-md) {
     width: auto;
     margin-right: px-to-rem(24);
     position: static;
@@ -41,7 +46,7 @@ $mobile-nav-width: 70%;
   box-shadow: 1px 7px 8px $shadow-color;
   transition: all 0.3s ease-in-out;
 
-  @include media($bp-sm) {
+  @include media($bp-md) {
     box-shadow: none;
   }
 }
@@ -60,7 +65,7 @@ $mobile-nav-width: 70%;
     color: $color-pink;
   }
 
-  @include media($bp-sm) {
+  @include media($bp-md) {
     border: none;
     padding: px-to-rem(8);
     margin: 0 px-to-rem(4);

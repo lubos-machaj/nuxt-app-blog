@@ -1,11 +1,15 @@
 <template>
   <Header />
-  <Slider />
+  <ClientOnly>
+    <Slider />
+  </ClientOnly>
   <main class="container">
     <slot />
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Slider from "@/components/Slider/Slider.vue";
+</script>
 
 <style scoped lang="scss"></style>
