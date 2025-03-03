@@ -13,6 +13,13 @@
 definePageMeta({
   layout: "home",
 });
+
+useHead({
+  title: "Nuxt Blog - Home",
+  meta: [
+    { name: "description", content: "This is the home page of my Nuxt app." },
+  ],
+});
 </script>
 
 <style scoped></style>

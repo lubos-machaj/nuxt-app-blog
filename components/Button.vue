@@ -69,8 +69,8 @@ const emit = defineEmits<{
 }
 
 .btn--sm {
-  font-size: px-to-rem(12);
-  padding: px-to-rem(4) px-to-rem(8);
+  font-size: px-to-rem(14);
+  padding: px-to-rem(6) px-to-rem(12);
 }
 
 .btn--md {

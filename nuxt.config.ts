@@ -3,6 +3,14 @@ import svgLoader from "vite-svg-loader";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
+
+  app: {
+    head: {
+      title: "Nuxt Blog",
+      meta: [{ name: "description", content: "My technology blog." }],
+    },
+  },
+
   devtools: { enabled: true },
 
   routeRules: {
