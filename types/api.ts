@@ -1,9 +1,10 @@
 export interface Data {
   id: number;
   title: string;
-  content: string;
   image: string;
   source: string;
+  content: string;
+  description: string;
 }
 
 export type ApiResponse = {

@@ -4,6 +4,7 @@
       <div class="header__wrapper">
         <nuxt-link class="header__logo" to="/">
           <AppLogo />
+          <h1 class="sr-only">My Blog</h1>
         </nuxt-link>
         <HeaderToggleButton v-model="openNav" />
         <Navigation :openNav="openNav" :routes="routes" />

@@ -26,6 +26,7 @@ export const getData = async (
       content: article.content,
       image: article.urlToImage,
       source: article.source.name || "unknown",
+      description: article.description,
     }));
 
     store.$state.blogs = blogs;

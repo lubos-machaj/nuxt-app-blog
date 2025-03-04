@@ -1,8 +1,6 @@
 <template>
   <Header />
-  <ClientOnly>
-    <Slider />
-  </ClientOnly>
+  <Slider />
   <main class="container">
     <slot />
   </main>
@@ -11,5 +9,3 @@
 <script setup lang="ts">
 import Slider from "@/components/Slider/Slider.vue";
 </script>
-
-<style scoped lang="scss"></style>
