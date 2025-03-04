@@ -2,7 +2,7 @@
   <article class="slider-item">
     <NuxtImg class="slider-item__image" :src="item.image" />
     <div class="slider-item__content">
-      <span class="slider-item__category" v-text="item.category" />
+      <span class="slider-item__category" v-text="item.source" />
       <h2 class="slider-item__title">{{ item.title }}</h2>
       <NuxtLink :to="`/blog/${item.id}`">
         <Button variant="light" size="sm">Read more</Button>
@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import type { SliderData } from "@/types/api";
-defineProps<{ item: SliderData }>();
+import type { Data } from "@/types/api";
+defineProps<{ item: Data }>();
 </script>
 
 <style scoped lang="scss">

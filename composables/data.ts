@@ -1,4 +1,4 @@
-import type { Data } from "@/types/api";
+import type { Data, ApiResponse, Article } from "@/types/api";
 import { useBlogStore } from "@/stores/blogs";
 
 /**
@@ -12,18 +12,32 @@ export const getData = async (
   itemByID: null | number = null
 ): Promise<Data[]> => {
   const store = useBlogStore();
+  const blogs = store.$state.blogs;
 
-  if (store.blogs.length === 0) {
-    store.fetchBlogs();
+  if (blogs.length === 0) {
+    const { data } = await useFetch<ApiResponse>(
+      "https://newsapi.org/v2/everything?q=food&pageSize=10&apiKey=7150325712f64dc89925d5e926b0a357"
+    );
+    const articles = data.value?.articles as Article[];
+
+    const blogs = articles.map((article, index) => ({
+      id: index + 1,
+      title: article.title,
+      content: article.content,
+      image: article.urlToImage,
+      source: article.source.name || "unknown",
+    }));
+
+    store.$state.blogs = blogs;
   }
 
   if (numberItems > 0) {
-    return store.blogs.slice(0, numberItems);
+    return blogs.slice(0, numberItems);
   }
 
   if (itemByID !== null) {
-    return store.blogs.filter((item) => item.id === itemByID);
+    return blogs.filter((item) => item.id === itemByID);
   }
 
-  return store.blogs;
+  return blogs || [];
 };

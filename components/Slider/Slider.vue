@@ -10,10 +10,7 @@
 import type { Data } from "@/types/api";
 
 const data = ref<Data[]>([]);
-
-onBeforeMount(async () => {
-  data.value = await getData(0);
-});
+data.value = await getData(4);
 </script>
 
 <style scoped lang="scss">
