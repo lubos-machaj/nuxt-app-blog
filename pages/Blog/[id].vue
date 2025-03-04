@@ -15,17 +15,20 @@
 </template>
 
 <script setup lang="ts">
+import type { Data } from "@/types/api";
+
+const { id } = useRoute().params;
+const arrayData = await getData(0, Number(id));
+const data = arrayData[0] as Data;
+
 definePageMeta({
   layout: "blog-detail",
 });
 
-import type { Data } from "@/types/api";
-
-const { id } = useRoute().params;
-
-const data = ref<Data | null>(null);
-const arrayData = await getData(0, Number(id));
-data.value = arrayData[0];
+useHead({
+  title: `My Blog | ${data.title}`,
+  meta: [{ name: "description", content: data.description }],
+});
 </script>
 
 <style scoped lang="scss">

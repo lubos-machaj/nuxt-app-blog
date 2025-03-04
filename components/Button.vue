@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-type ButtonVariant = "primary" | "secondary" | "light";
+type ButtonVariant = "primary" | "secondary" | "light" | "link";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -33,8 +33,8 @@ const emit = defineEmits<{
 
 <style scoped lang="scss">
 .btn {
-  color: $text-color;
-  border: 1px solid $text-color;
+  color: $font-color;
+  border: 1px solid $font-color;
   transition: all 0.2s ease-in-out;
 }
 
@@ -68,14 +68,23 @@ const emit = defineEmits<{
   }
 }
 
+.btn--link {
+  border-color: transparent;
+  font-weight: $font-weight-semibold;
+
+  &:hover {
+    border-color: $font-color;
+  }
+}
+
 .btn--sm {
   font-size: px-to-rem(14);
-  padding: px-to-rem(6) px-to-rem(12);
+  padding: px-to-rem(4) px-to-rem(8);
 }
 
 .btn--md {
   font-size: px-to-rem(16);
-  padding: px-to-rem(8) px-to-rem(16);
+  padding: px-to-rem(6) px-to-rem(12);
 }
 
 .btn--lg {

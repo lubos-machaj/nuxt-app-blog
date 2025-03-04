@@ -56,8 +56,8 @@ defineProps<{ item: Data }>();
   margin-bottom: px-to-rem(4);
 }
 .slider-item__title {
-  font-size: px-to-rem(20);
-  font-weight: $font-weight-normal;
+  font-size: px-to-rem(16);
+  font-weight: $font-weight-semibold;
   margin-bottom: px-to-rem(16);
 }
 </style>

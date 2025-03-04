@@ -9,14 +9,17 @@ $color-blue: #3A3B7B;
 $color-cyan: #64C2DB;
 $color-pruple: #7476ED;
 $color-pink: #E56F8C;
+$color-gray: #a3a3a3;
 
 $primary-color: $color-blue;
 $secondary-color: $color-cyan;
 $tertiary-color: $color-pruple;
 $accent-color: $color-pink;
-
 $background-color: $color-white;
-$shadow-color: rgba(0, 0, 0, 0.1);
+
+$font-color: #2e2e2e;
+$font-color-lighter: #4e4e4e;
+
 
 /**
 * Typography
@@ -26,7 +29,6 @@ $font-size: px-to-rem(16);
 $font-weight-normal: 400;
 $font-weight-semibold: 600;
 $font-weight-bold: 700;
-$text-color: #2e2e2e;
 
 /**
 * Breakpoints
@@ -38,10 +40,10 @@ $bp-lg: 992px;
 $bp-xl: 1200px;
 
 /**
-* Spacing
+* Shadows
 */
-
-
-
-$box-shadow: 0 1px 3px $shadow-color;
+$shadow-color: rgba($color-black, 0.2);
+$box-shadow-s: 0 1px 3px $shadow-color;
+$box-shadow-m: 0 5px 6px  $shadow-color;
+$box-shadow-l: 1px 7px 8px $shadow-color;
 

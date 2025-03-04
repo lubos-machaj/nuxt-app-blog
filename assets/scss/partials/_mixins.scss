@@ -1,9 +1,17 @@
+/**
+* Media min query mixin
+* @param {string} $min-width - The minimum width of the media query
+*/
 @mixin media($min-width) {
     @media (min-width: $min-width) {
         @content;
     }
 }
 
+/**
+* Media max query mixin
+* @param {string} $max-width - The maximum width of the media query
+*/
 @mixin max-media($max-width) {
     @media (max-width: calc($max-width - 1px)) {
         @content;
@@ -23,4 +31,12 @@
     justify-content: $justify;
     align-items: $align;
     flex-wrap: $wrap;
+}
+
+/**
+ * Box shadow mixin
+ * @param {string} $shadow - The shadow value
+ */
+@mixin transition($property: all, $duration: 0.2s, $ease: ease-in-out) {
+    transition: $property $duration $ease;
 }

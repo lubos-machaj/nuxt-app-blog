@@ -37,7 +37,7 @@ watch(
   align-items: center;
   padding: 0;
   position: relative;
-  box-shadow: $box-shadow;
+  box-shadow: $box-shadow-s;
 
   @include media($bp-md) {
     flex-direction: row;

@@ -43,7 +43,7 @@ $mobile-nav-width: 75%;
   right: 0;
   top: $mobile-nav-width;
   background: $color-white;
-  box-shadow: 1px 7px 8px $shadow-color;
+  box-shadow: $box-shadow-l;
   transition: all 0.3s ease-in-out;
 
   @include media($bp-md) {

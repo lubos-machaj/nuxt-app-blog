@@ -21,7 +21,7 @@ const open = defineModel();
   z-index: 10;
 
   &__icon {
-    color: $text-color;
+    color: $font-color;
     font-size: px-to-rem(30);
   }
 

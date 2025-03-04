@@ -1,5 +1,5 @@
 <template>
-  <div>Home data: {{ data }}</div>
+  <BlogList />
 </template>
 
 <script setup lang="ts">
@@ -10,14 +10,11 @@ definePageMeta({
 });
 
 useHead({
-  title: "Nuxt Blog - Home",
+  title: "My Blog | Home",
   meta: [
     { name: "description", content: "This is the home page of my Nuxt app." },
   ],
 });
-
-const data = ref<Data[]>([]);
-data.value = await getData(4);
 </script>
 
 <style scoped></style>
