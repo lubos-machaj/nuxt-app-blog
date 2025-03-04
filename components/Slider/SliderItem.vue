@@ -4,8 +4,8 @@
     <div class="slider-item__content">
       <span class="slider-item__category" v-text="item.source" />
       <h2 class="slider-item__title">{{ item.title }}</h2>
-      <NuxtLink :to="`/blog/${item.id}`">
-        <Button variant="light" size="sm">Read more</Button>
+      <NuxtLink :to="`/blog/${item.id}`" aria-hidden="true" tabindex="-1">
+        <Button variant="light" size="md">Read more</Button>
       </NuxtLink>
     </div>
   </article>

@@ -16,7 +16,7 @@ export const getData = async (
 
   if (blogs.length === 0) {
     const { data } = await useFetch<ApiResponse>(
-      "https://newsapi.org/v2/everything?q=food&pageSize=10&apiKey=7150325712f64dc89925d5e926b0a357"
+      "https://newsapi.org/v2/everything?q=nasa&pageSize=9&apiKey=7150325712f64dc89925d5e926b0a357"
     );
     const articles = data.value?.articles as Article[];
 

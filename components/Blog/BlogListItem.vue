@@ -1,6 +1,6 @@
 <template>
-  <NuxtLink :to="`/blog/${item.id}`">
-    <article class="blog-item">
+  <article class="blog-item">
+    <NuxtLink :to="`/blog/${item.id}`" aria-hidden="true" tabindex="-1">
       <NuxtImg class="slider-item__image" :src="item.image" />
       <div class="blog-item__content">
         <span class="blog-item__source" v-text="item.source" />
@@ -11,8 +11,8 @@
           >Read more</Button
         >
       </div>
-    </article>
-  </NuxtLink>
+    </NuxtLink>
+  </article>
 </template>
 
 <script setup lang="ts">
@@ -24,20 +24,24 @@ defineProps<{ item: Data }>();
 <style scoped lang="scss">
 .blog-item {
   width: 100%;
-  margin-bottom: px-to-rem(16);
+  margin-bottom: px-to-rem(24);
   text-align: center;
   @include transition(box-shadow);
+  height: fit-content;
+
+  grid-row: span 3;
+
   &:hover {
     box-shadow: $box-shadow-m;
   }
 
-  @include media($bp-sm) {
-    width: calc(100% / 2);
-  }
+  //   @include media($bp-sm) {
+  //     width: calc(100% / 2);
+  //   }
 
-  @include media($bp-md) {
-    width: calc(100% / 3);
-  }
+  //   @include media($bp-md) {
+  //     width: calc(100% / 3);
+  //   }
 }
 .slider-item__image {
   width: 100%;
@@ -62,6 +66,6 @@ defineProps<{ item: Data }>();
 }
 .blog-item__decription {
   font-size: px-to-rem(14);
-  margin-bottom: px-to-rem(12);
+  margin-bottom: px-to-rem(8);
 }
 </style>
