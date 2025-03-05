@@ -1,13 +1,13 @@
 <template>
   <article class="slider-item">
-    <NuxtImg class="slider-item__image" :src="item.image" />
-    <div class="slider-item__content">
-      <span class="slider-item__category" v-text="item.source" />
-      <h2 class="slider-item__title">{{ item.title }}</h2>
-      <NuxtLink :to="`/blog/${item.id}`" aria-hidden="true" tabindex="-1">
+    <NuxtLink :to="`/blog/${item.id}`" tabindex="-1">
+      <NuxtImg :src="item.image" :alt="item.title" class="slider-item__image" />
+      <div class="slider-item__content">
+        <span class="slider-item__category" v-text="item.source" />
+        <h2 class="slider-item__title">{{ item.title }}</h2>
         <Button variant="light" size="md">Read more</Button>
-      </NuxtLink>
-    </div>
+      </div>
+    </NuxtLink>
   </article>
 </template>
 
@@ -20,7 +20,7 @@ defineProps<{ item: Data }>();
 .slider-item {
   min-height: px-to-rem(240);
   text-align: center;
-  margin: 0 0.5px;
+  margin: 0 1px;
   scroll-snap-align: start;
   flex: 1 0 100%;
   background: $color-black;
@@ -35,11 +35,17 @@ defineProps<{ item: Data }>();
 }
 .slider-item__image {
   height: 100%;
+  min-width: 100%;
   object-fit: cover;
   position: absolute;
-  filter: brightness(0.3);
+  filter: brightness(0.25);
+  @include transition(filter);
   top: 0;
   z-index: 10;
+
+  a:hover & {
+    filter: brightness(0.3);
+  }
 }
 .slider-item__content {
   @include flex(column, space-between, center);

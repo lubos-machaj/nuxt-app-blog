@@ -19,8 +19,10 @@ body {
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  margin-top: 77px;
   
   @include media($bp-md) {
+    margin-top: 0;
     overflow: unset;
   }
 }

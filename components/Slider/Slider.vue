@@ -1,7 +1,12 @@
 <template>
   <div class="slider">
     <div class="slider__wrapper">
-      <SliderItem v-for="item in data" :key="item.id" :item="item" />
+      <SliderItem
+        v-if="data"
+        v-for="item in data"
+        :key="item.id"
+        :item="item"
+      />
     </div>
   </div>
 </template>
@@ -25,7 +30,6 @@ data.value = await getData(4);
   scroll-snap-type: x mandatory;
   display: flex;
   scrollbar-width: none;
-  background-color: $background-color;
 
   &::-webkit-scrollbar {
     display: none;

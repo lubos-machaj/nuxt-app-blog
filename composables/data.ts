@@ -15,21 +15,27 @@ export const getData = async (
   const blogs = store.$state.blogs;
 
   if (blogs.length === 0) {
-    const { data } = await useFetch<ApiResponse>(
-      "https://newsapi.org/v2/everything?q=nasa&pageSize=9&apiKey=7150325712f64dc89925d5e926b0a357"
-    );
-    const articles = data.value?.articles as Article[];
+    store.setLoading(true);
 
-    const blogs = articles.map((article, index) => ({
-      id: index + 1,
-      title: article.title,
-      content: article.content,
-      image: article.urlToImage,
-      source: article.source.name || "unknown",
-      description: article.description,
-    }));
+    try {
+      const { data } = await useFetch<ApiResponse>(
+        "https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=9&apiKey=7150325712f64dc89925d5e926b0a357"
+      );
+      const articles = data.value?.articles as Article[];
 
-    store.$state.blogs = blogs;
+      const blogs = articles.map((article, index) => ({
+        id: index + 1,
+        title: article.title,
+        content: article.content,
+        image: article.urlToImage,
+        source: article.source.name || "unknown",
+        description: article.description,
+      }));
+
+      store.setBlogs(blogs);
+    } finally {
+      store.setLoading(false);
+    }
   }
 
   if (numberItems > 0) {

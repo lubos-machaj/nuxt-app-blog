@@ -9,6 +9,7 @@
 import type { Data } from "@/types/api";
 
 const data = ref<Data[]>([]);
+const store = useBlogStore();
 data.value = await getData(12);
 </script>
 

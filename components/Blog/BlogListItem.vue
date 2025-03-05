@@ -1,7 +1,7 @@
 <template>
   <article class="blog-item">
-    <NuxtLink :to="`/blog/${item.id}`" aria-hidden="true" tabindex="-1">
-      <NuxtImg class="slider-item__image" :src="item.image" />
+    <NuxtLink :to="`/blog/${item.id}`" tabindex="-1">
+      <NuxtImg :src="item.image" :alt="item.title" class="slider-item__image" />
       <div class="blog-item__content">
         <span class="blog-item__source" v-text="item.source" />
         <h3 class="blog-item__title" v-text="item.title" />

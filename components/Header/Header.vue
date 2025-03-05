@@ -38,8 +38,15 @@ watch(
   padding: 0;
   position: relative;
   box-shadow: $box-shadow-s;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: $color-white;
 
   @include media($bp-md) {
+    position: static;
     flex-direction: row;
   }
 }

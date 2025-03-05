@@ -1,34 +1,55 @@
 <template>
-  <section class="blog" v-if="data">
+  <section class="blog" v-if="item">
     <div class="blog__header">
       <div class="container">
-        <h2 class="blog__title" v-text="data.title" />
+        <h2 class="blog__title" v-text="item.title" />
       </div>
     </div>
 
     <div class="blog__content container">
-      <p class="blog__text" v-text="data.description" />
-      <p class="blog__text" v-text="data.content" />
-      <NuxtImg class="blog__image w-100" :src="data.image" />
+      <p class="blog__text" v-text="item.description" />
+      <p class="blog__text" v-text="item.content" />
+      <NuxtImg
+        @click="toggleDialog()"
+        class="blog__image w-100"
+        :src="item.image"
+        :alt="item.title"
+      />
     </div>
+
+    <Dialog v-model="showDialog">
+      <NuxtImg :src="item.image" :alt="item.title" />
+    </Dialog>
   </section>
 </template>
 
 <script setup lang="ts">
 import type { Data } from "@/types/api";
 
+/**
+ * Data
+ */
 const { id } = useRoute().params;
+const store = useBlogStore();
 const arrayData = await getData(0, Number(id));
-const data = arrayData[0] as Data;
+const item = ref<Data>(arrayData[0]);
+
+/**
+ * Dialog
+ */
+const showDialog = ref(false);
+const toggleDialog = () => {
+  showDialog.value = !showDialog.value;
+};
 
 definePageMeta({
   layout: "blog-detail",
 });
 
-useHead({
-  title: `My Blog | ${data.title}`,
-  meta: [{ name: "description", content: data.description }],
-});
+// useHead({
+//   title: `My Blog | ${item.value.title}`,
+//   meta: [{ name: "description", content: item.value.description }],
+// });
 </script>
 
 <style scoped lang="scss">
@@ -47,5 +68,12 @@ useHead({
 }
 .blog__text {
   margin-bottom: px-to-rem(16);
+}
+.blog__image {
+  cursor: pointer;
+  &:hover {
+    filter: brightness(0.8);
+    @include transition(filter);
+  }
 }
 </style>

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
       title: "Nuxt Blog",
       meta: [{ name: "description", content: "My technology blog." }],
     },
+    pageTransition: { name: "page", mode: "out-in" },
   },
 
   devtools: { enabled: true },
@@ -28,6 +29,7 @@ export default defineNuxtConfig({
             @use "~/assets/scss/partials/_functions.scss" as *;
             @use "~/assets/scss/partials/_mixins.scss" as *;
             @use "~/assets/scss/partials/_helpers.scss" as *;
+            @use "~/assets/scss/partials/_animations.scss" as *;
           `,
         },
       },

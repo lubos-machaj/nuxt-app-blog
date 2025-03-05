@@ -9,6 +9,14 @@ interface State {
 export const useBlogStore = defineStore("blogs", {
   state: (): State => ({
     blogs: [],
-    loading: false,
+    loading: true,
   }),
+  actions: {
+    setBlogs(blogs: Data[]) {
+      this.blogs = blogs;
+    },
+    setLoading(loading: boolean) {
+      this.loading = loading;
+    },
+  },
 });
