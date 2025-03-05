@@ -44,7 +44,7 @@ defineProps<{ item: Data }>();
   z-index: 10;
 
   a:hover & {
-    filter: brightness(0.3);
+    filter: brightness(0.35);
   }
 }
 .slider-item__content {

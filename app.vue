@@ -1,8 +1,7 @@
 <template>
   <div class="app">
-    <transition name="fade" mode="out-in">
-      <Loader v-if="loading" />
-    </transition>
+    <Loader v-if="loading" />
+
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>

@@ -30,7 +30,6 @@ import type { Data } from "@/types/api";
  * Data
  */
 const { id } = useRoute().params;
-const store = useBlogStore();
 const arrayData = await getData(0, Number(id));
 const item = ref<Data>(arrayData[0]);
 
@@ -46,10 +45,16 @@ definePageMeta({
   layout: "blog-detail",
 });
 
-// useHead({
-//   title: `My Blog | ${item.value.title}`,
-//   meta: [{ name: "description", content: item.value.description }],
-// });
+item.value &&
+  useHead({
+    title: `My Blog | ${item.value.title}`,
+    meta: [
+      {
+        name: "description",
+        content: item.value.description,
+      },
+    ],
+  });
 </script>
 
 <style scoped lang="scss">

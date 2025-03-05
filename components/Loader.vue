@@ -1,9 +1,7 @@
 <template>
-  <Transition name="fade" mode="out-in">
-    <div class="loader-wrapper">
-      <div class="loading" />
-    </div>
-  </Transition>
+  <div class="loader-wrapper">
+    <div class="loading" />
+  </div>
 </template>
 
 <script setup lang="ts"></script>

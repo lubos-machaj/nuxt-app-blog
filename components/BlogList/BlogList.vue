@@ -9,14 +9,12 @@
 import type { Data } from "@/types/api";
 
 const data = ref<Data[]>([]);
-const store = useBlogStore();
 data.value = await getData(12);
 </script>
 
 <style scoped lang="scss">
 .blog {
   padding: px-to-rem(32) 0;
-
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 16px;

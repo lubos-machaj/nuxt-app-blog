@@ -2,10 +2,10 @@ import type { Data, ApiResponse, Article } from "@/types/api";
 import { useBlogStore } from "@/stores/blogs";
 
 /**
- * Get data from the store
+ * Get fetched data from the store
  * @param numberItems - Number of items to get (0 for all)
  * @param itemByID - Get a single item by ID
- * @returns Data[]
+ * @returns Data[] - Fetched data filtered by numberItems or itemByID
  */
 export const getData = async (
   numberItems: number = 0,
@@ -13,14 +13,14 @@ export const getData = async (
 ): Promise<Data[]> => {
   const store = useBlogStore();
   const blogs = store.$state.blogs;
+  const apikey = process.env.NUXT_NEWS_API_KEY;
 
   if (blogs.length === 0) {
     store.setLoading(true);
 
     try {
-      const { data } = await useFetch<ApiResponse>(
-        "https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=9&apiKey=7150325712f64dc89925d5e926b0a357"
-      );
+      const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=9&apiKey=${apikey}`;
+      const { data } = await useFetch<ApiResponse>(url);
       const articles = data.value?.articles as Article[];
 
       const blogs = articles.map((article, index) => ({

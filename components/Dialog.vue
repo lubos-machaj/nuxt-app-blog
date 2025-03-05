@@ -1,7 +1,12 @@
 <template>
   <Transition name="fade" mode="out-in">
-    <div v-if="open" class="dialog-overlay" @click="toggleDialog">
-      <dialog :open="toggleDialog" class="dialog" @click.stop>
+    <div
+      v-if="open"
+      class="dialog-overlay"
+      @click="toggleDialog"
+      aria-label="Close"
+    >
+      <dialog :open="open" class="dialog" @click.stop>
         <button class="dialog__close-btn" @click="toggleDialog">×</button>
         <slot></slot>
       </dialog>
@@ -10,9 +15,11 @@
 </template>
 
 <script setup lang="ts">
-const open = defineModel();
+const open = defineModel<boolean>();
 
-const toggleDialog = () => (open.value = !open.value);
+const toggleDialog = () => {
+  open.value = !open.value;
+};
 
 const handleEscKey = (event: KeyboardEvent): void => {
   if (event.key === "Escape") {
@@ -42,7 +49,7 @@ onUnmounted(() => {
   z-index: 1000;
 }
 .dialog {
-  background: white;
+  background: $color-white;
   position: relative;
   max-width: 90%;
   max-height: 90%;

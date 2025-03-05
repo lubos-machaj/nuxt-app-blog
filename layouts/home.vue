@@ -1,6 +1,10 @@
 <template>
   <Header />
-  <Slider />
+
+  <ClientOnly>
+    <Slider />
+  </ClientOnly>
+
   <main class="container">
     <slot />
   </main>

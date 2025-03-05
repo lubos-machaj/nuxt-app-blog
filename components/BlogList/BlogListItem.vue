@@ -28,20 +28,11 @@ defineProps<{ item: Data }>();
   text-align: center;
   @include transition(box-shadow);
   height: fit-content;
-
   grid-row: span 3;
 
   &:hover {
     box-shadow: $box-shadow-m;
   }
-
-  //   @include media($bp-sm) {
-  //     width: calc(100% / 2);
-  //   }
-
-  //   @include media($bp-md) {
-  //     width: calc(100% / 3);
-  //   }
 }
 .slider-item__image {
   width: 100%;

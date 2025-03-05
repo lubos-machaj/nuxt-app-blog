@@ -2,8 +2,8 @@
   <header class="header">
     <div class="container container--md p-0">
       <div class="header__wrapper">
-        <nuxt-link class="header__logo" to="/">
-          <AppLogo />
+        <nuxt-link class="header__logo" to="/home">
+          <AppLogo aria-hidden="true" />
           <h1 class="sr-only">My Blog</h1>
         </nuxt-link>
         <HeaderToggleButton v-model="openNav" />

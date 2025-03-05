@@ -7,9 +7,29 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Nuxt Blog",
-      meta: [{ name: "description", content: "My technology blog." }],
+      meta: [
+        {
+          name: "description",
+          content:
+            "My blog covers a wide range of topics, sharing thoughts, insights, and experiences on everything from technology and travel to daily life and personal growth.",
+        },
+      ],
+      link: [
+        {
+          rel: "preload",
+          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap",
+          as: "style",
+        },
+      ],
+      htmlAttrs: {
+        lang: "en",
+      },
     },
     pageTransition: { name: "page", mode: "out-in" },
+  },
+
+  runtimeConfig: {
+    apiKey: process.env.NUXT_NEWS_API_KEY,
   },
 
   devtools: { enabled: true },

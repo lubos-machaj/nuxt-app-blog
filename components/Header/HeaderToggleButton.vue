@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const open = defineModel();
+const open = defineModel<boolean>();
 </script>
 
 <style scoped lang="scss">
