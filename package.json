@@ -17,7 +17,6 @@
     "vue-router": "latest"
   },
   "devDependencies": {
-    "sass": "^1.85.1",
-    "vite-svg-loader": "^5.1.0"
+    "sass": "^1.85.1"
   }
 }

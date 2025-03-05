@@ -1,7 +1,6 @@
 export interface Data {
   id: number;
   title: string;
-  image: string;
   source: string;
   content: string;
   description: string;

@@ -1,7 +1,11 @@
 <template>
   <article class="blog-item">
     <NuxtLink :to="`/blog/${item.id}`" tabindex="-1">
-      <NuxtImg :src="item.image" :alt="item.title" class="slider-item__image" />
+      <NuxtImg
+        :src="getImage(item.id)"
+        :alt="item.title"
+        class="slider-item__image"
+      />
       <div class="blog-item__content">
         <span class="blog-item__source" v-text="item.source" />
         <h3 class="blog-item__title" v-text="item.title" />
@@ -17,7 +21,6 @@
 
 <script setup lang="ts">
 import type { Data } from "@/types/api";
-
 defineProps<{ item: Data }>();
 </script>
 

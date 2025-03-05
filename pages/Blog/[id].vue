@@ -12,13 +12,13 @@
       <NuxtImg
         @click="toggleDialog()"
         class="blog__image w-100"
-        :src="item.image"
+        :src="getImage(item.id)"
         :alt="item.title"
       />
     </div>
 
     <Dialog v-model="showDialog">
-      <NuxtImg :src="item.image" :alt="item.title" />
+      <NuxtImg :src="getImage(item.id)" :alt="item.title" />
     </Dialog>
   </section>
 </template>

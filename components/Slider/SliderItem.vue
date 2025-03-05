@@ -1,7 +1,11 @@
 <template>
   <article class="slider-item">
     <NuxtLink :to="`/blog/${item.id}`" tabindex="-1">
-      <NuxtImg :src="item.image" :alt="item.title" class="slider-item__image" />
+      <NuxtImg
+        :src="getImage(item.id)"
+        :alt="item.title"
+        class="slider-item__image"
+      />
       <div class="slider-item__content">
         <span class="slider-item__category" v-text="item.source" />
         <h2 class="slider-item__title">{{ item.title }}</h2>

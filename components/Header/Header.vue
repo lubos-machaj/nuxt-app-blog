@@ -2,8 +2,13 @@
   <header class="header">
     <div class="container container--md p-0">
       <div class="header__wrapper">
-        <nuxt-link class="header__logo" to="/home">
-          <AppLogo aria-hidden="true" />
+        <nuxt-link class="header__link" to="/home">
+          <NuxtImg
+            src="app-logo.svg"
+            class="header__logo"
+            alt="My blog logo"
+            aria-hidden="true"
+          />
           <h1 class="sr-only">My Blog</h1>
         </nuxt-link>
         <HeaderToggleButton v-model="openNav" />
@@ -14,7 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import AppLogo from "@/assets/app-logo.svg";
 import Navigation from "./Navigation.vue";
 
 const openNav = ref<boolean>(false);
@@ -56,7 +60,10 @@ watch(
   justify-content: space-between;
   align-items: center;
 }
-.header__logo {
+.header__link {
   padding: px-to-rem(24);
+}
+.header__logo {
+  width: px-to-rem(155);
 }
 </style>
