@@ -13,7 +13,8 @@ export const getData = async (
 ): Promise<Data[]> => {
   const store = useBlogStore();
   const blogs = store.$state.blogs;
-  const apikey = process.env.NUXT_NEWS_API_KEY;
+  // const apikey = process.env.NUXT_NEWS_API_KEY;
+  const apikey = "7150325712f64dc89925d5e926b0a357";
 
   if (blogs.length === 0) {
     store.setLoading(true);
