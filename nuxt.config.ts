@@ -12,13 +12,6 @@ export default defineNuxtConfig({
             "My blog covers a wide range of topics, sharing thoughts, insights, and experiences on everything from technology and travel to daily life and personal growth.",
         },
       ],
-      link: [
-        {
-          rel: "preload",
-          href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap",
-          as: "style",
-        },
-      ],
       htmlAttrs: {
         lang: "en",
       },
@@ -54,5 +47,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ["@nuxt/image", "@pinia/nuxt"],
+  modules: ["@nuxt/image", "@pinia/nuxt", "@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      Poppins: [400, 600, 700],
+    },
+    display: "swap",
+    preload: true,
+  },
 });
