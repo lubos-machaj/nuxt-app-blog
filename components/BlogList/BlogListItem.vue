@@ -5,12 +5,15 @@
         :src="getImage(item.id)"
         :alt="item.title"
         class="slider-item__image"
+        quality="50"
+        loading="lazy"
+        sizes="280px xs:480px md:320px lg:288px xl:348px"
       />
       <div class="blog-item__content">
-        <span class="blog-item__source" v-text="item.tag" />
+        <span class="blog-item__tag" v-text="item.tag" />
         <h3 class="blog-item__title" v-text="item.title" />
         <div class="blog-item__separator" />
-        <p class="blog-item__decription" v-text="item.body" />
+        <p class="blog-item__decription" v-text="truncateText(item.body, 80)" />
         <Button class="blog-item__btn" variant="link" size="md"
           >Read more</Button
         >
@@ -39,13 +42,16 @@ defineProps<{ item: Data }>();
 }
 .slider-item__image {
   width: 100%;
+  height: px-to-rem(200);
+  object-fit: cover;
 }
 .blog-item__content {
   padding: px-to-rem(8) px-to-rem(24) px-to-rem(16);
 }
-.blog-item__source {
+.blog-item__tag {
   display: inline-block;
   font-size: px-to-rem(12);
+  text-transform: uppercase;
   margin-bottom: px-to-rem(4);
 }
 .blog-item__title {

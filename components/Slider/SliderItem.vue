@@ -5,6 +5,9 @@
         :src="getImage(item.id)"
         :alt="item.title"
         class="slider-item__image"
+        quality="30"
+        loading="lazy"
+        sizes="320px xs:576px md:375px lg:300px xl:360px"
       />
       <div class="slider-item__content">
         <span class="slider-item__category" v-text="item.tag" />

@@ -31,19 +31,19 @@ body {
   padding: 0 px-to-rem(16);
 
   @include media($bp-sm) {
-    max-width: 540px;
+    max-width: px-to-rem(540);
   }
 
   @include media($bp-md) {
-    max-width: 720px;
+    max-width: px-to-rem(720);
   }
 
   @include media($bp-lg) {
-    max-width: 960px;
+    max-width: px-to-rem(960);
   }
 
   @include media($bp-xl) {
-    max-width: 1140px;
+    max-width: px-to-rem(1140);
   }
 }
 

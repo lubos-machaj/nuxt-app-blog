@@ -7,7 +7,10 @@
       aria-label="Close"
     >
       <dialog :open="open" class="dialog" @click.stop>
-        <button class="dialog__close-btn" @click="toggleDialog">×</button>
+        <button class="dialog__close-btn" @click="toggleDialog">
+          <span class="dialog__close-btn-text">×</span>
+        </button>
+
         <slot></slot>
       </dialog>
     </div>
@@ -58,10 +61,18 @@ onUnmounted(() => {
 }
 .dialog__close-btn {
   color: $color-black;
-  font-size: px-to-rem(24);
   padding: px-to-rem(10);
   position: absolute;
   top: 0;
   right: px-to-rem(10);
+}
+.dialog__close-btn-text {
+  font-size: px-to-rem(40);
+  line-height: 1;
+  text-shadow: 0 0 px-to-rem(3) $color-white;
+
+  @include media($bp-md) {
+    font-size: px-to-rem(30);
+  }
 }
 </style>

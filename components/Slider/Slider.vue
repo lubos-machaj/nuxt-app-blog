@@ -24,6 +24,7 @@ data.value = await getData(4);
   background-color: #08071b;
 }
 .slider__wrapper {
+  min-height: px-to-rem(240);
   max-width: px-to-rem(1440);
   margin: 0 auto;
   overflow-x: auto;

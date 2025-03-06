@@ -43,7 +43,21 @@ export default defineNuxtConfig({
     },
   },
 
+  // Add modules
   modules: ["@nuxt/image", "@pinia/nuxt", "@nuxtjs/google-fonts"],
+
+  // Setups for @nuxt/image module
+  image: {
+    screens: {
+      xs: 320,
+      sm: 576,
+      md: 768,
+      lg: 992,
+      xl: 1200,
+    },
+  },
+
+  // Setups for @nuxtjs/google-fonts module
   googleFonts: {
     families: {
       Poppins: [400, 600, 700],

@@ -4,6 +4,8 @@
       <div class="header__wrapper">
         <nuxt-link class="header__link" to="/home">
           <NuxtImg
+            width="155"
+            height="29"
             src="app-logo.svg"
             class="header__logo"
             alt="My blog logo"

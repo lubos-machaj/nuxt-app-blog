@@ -16,25 +16,19 @@ export const getData = async (
   const blogs = store.$state.blogs;
 
   if (blogs.length === 0) {
-    store.setLoading(true);
+    const { data } = await useFetch<ApiResponse>(
+      "https://dummyjson.com/posts/search?q=space"
+    );
+    const posts = data.value?.posts as Post[];
 
-    try {
-      const { data } = await useFetch<ApiResponse>(
-        "https://dummyjson.com/posts/search?q=space"
-      );
-      const posts = data.value?.posts as Post[];
+    const blogs = posts.map((item, index) => ({
+      id: index + 1,
+      body: item.body,
+      tag: item.tags[0],
+      title: item.title,
+    }));
 
-      const blogs = posts.map((item, index) => ({
-        id: index + 1,
-        body: item.body,
-        tag: item.tags[0],
-        title: item.title,
-      }));
-
-      store.setBlogs(blogs);
-    } finally {
-      store.setLoading(false);
-    }
+    store.setBlogs(blogs);
   }
 
   if (numberItems > 0) {
