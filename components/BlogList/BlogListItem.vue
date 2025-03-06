@@ -7,10 +7,10 @@
         class="slider-item__image"
       />
       <div class="blog-item__content">
-        <span class="blog-item__source" v-text="item.source" />
+        <span class="blog-item__source" v-text="item.tag" />
         <h3 class="blog-item__title" v-text="item.title" />
         <div class="blog-item__separator" />
-        <p class="blog-item__decription" v-text="item.description" />
+        <p class="blog-item__decription" v-text="item.body" />
         <Button class="blog-item__btn" variant="link" size="md"
           >Read more</Button
         >

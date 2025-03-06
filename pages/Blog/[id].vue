@@ -7,8 +7,8 @@
     </div>
 
     <div class="blog__content container">
-      <p class="blog__text" v-text="item.description" />
-      <p class="blog__text" v-text="item.content" />
+      <p class="blog__text" v-text="item.body" />
+      <p class="blog__text" v-text="item.body" />
       <NuxtImg
         @click="toggleDialog()"
         class="blog__image w-100"
@@ -51,7 +51,7 @@ item.value &&
     meta: [
       {
         name: "description",
-        content: item.value.description,
+        content: item.value.body,
       },
     ],
   });

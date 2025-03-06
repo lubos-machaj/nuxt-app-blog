@@ -9,7 +9,7 @@
 import type { Data } from "@/types/api";
 
 const data = ref<Data[]>([]);
-data.value = await getData(12);
+data.value = await getData(6);
 </script>
 
 <style scoped lang="scss">

@@ -1,5 +1,6 @@
-import type { Data, ApiResponse, Article } from "@/types/api";
+import type { Data, ApiResponse, Post } from "@/types/api";
 import { useBlogStore } from "@/stores/blogs";
+import Id from "~/pages/Blog/[id].vue";
 
 /**
  * Get fetched data from the store
@@ -13,22 +14,21 @@ export const getData = async (
 ): Promise<Data[]> => {
   const store = useBlogStore();
   const blogs = store.$state.blogs;
-  const apikey = "7150325712f64dc89925d5e926b0a357";
 
   if (blogs.length === 0) {
     store.setLoading(true);
 
     try {
-      const url = `https://newsapi.org/v2/top-headlines?sources=techcrunch&pageSize=9&apiKey=${apikey}`;
-      const { data } = await useFetch<ApiResponse>(url);
-      const articles = data.value?.articles as Article[];
+      const { data } = await useFetch<ApiResponse>(
+        "https://dummyjson.com/posts/search?q=space"
+      );
+      const posts = data.value?.posts as Post[];
 
-      const blogs = articles.map((article, index) => ({
+      const blogs = posts.map((item, index) => ({
         id: index + 1,
-        title: article.title,
-        content: article.content,
-        source: article.source.name || "unknown",
-        description: article.description,
+        body: item.body,
+        tag: item.tags[0],
+        title: item.title,
       }));
 
       store.setBlogs(blogs);

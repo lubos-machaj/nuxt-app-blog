@@ -1,27 +1,26 @@
 export interface Data {
   id: number;
+  tag: string;
+  body: string;
   title: string;
-  source: string;
-  content: string;
-  description: string;
 }
 
-export type ApiResponse = {
-  status: string;
-  totalResults: number;
-  articles: Article[];
-};
-
-export type Article = {
-  source: {
-    id: string | null;
-    name: string;
-  };
-  author: string;
+export interface Post {
+  id: number;
   title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-  publishedAt: string;
-  content: string;
-};
+  body: string;
+  tags: string[];
+  reactions: {
+    likes: number;
+    dislikes: number;
+  };
+  views: number;
+  userId: number;
+}
+
+export interface ApiResponse {
+  posts: Post[];
+  total: number;
+  skip: number;
+  limit: number;
+}

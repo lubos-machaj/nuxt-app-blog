@@ -7,7 +7,7 @@
         class="slider-item__image"
       />
       <div class="slider-item__content">
-        <span class="slider-item__category" v-text="item.source" />
+        <span class="slider-item__category" v-text="item.tag" />
         <h2 class="slider-item__title">{{ item.title }}</h2>
         <Button variant="light" size="md">Read more</Button>
       </div>
