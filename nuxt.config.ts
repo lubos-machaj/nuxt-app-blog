@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     pageTransition: { name: "page", mode: "out-in" },
   },
 
-  runtimeConfig: {
-    apiKey: process.env.NUXT_NEWS_API_KEY,
-  },
-
   devtools: { enabled: true },
 
   routeRules: {
